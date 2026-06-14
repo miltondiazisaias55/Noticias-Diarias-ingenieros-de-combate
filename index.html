@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ingenieros Militares — Diario</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #f0f0ee;
+      color: #1a1a1a;
+      min-height: 100vh;
+    }
+
+    /* HEADER */
+    header {
+      background: #1b2a3b;
+      color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .header-left { display: flex; align-items: center; gap: 0.75rem; }
+    .header-title { font-size: 1.2rem; font-weight: 600; letter-spacing: 0.01em; }
+    .badge-diario {
+      background: #c0392b;
+      color: #fff;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 2px 8px;
+      border-radius: 3px;
+      text-transform: uppercase;
+    }
+    .header-sub {
+      font-size: 0.78rem;
+      color: #a0b0c0;
+      margin-top: 2px;
+    }
+    .header-date {
+      font-size: 0.85rem;
+      color: #a0b0c0;
+      white-space: nowrap;
+    }
+
+    /* MAIN */
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 1.5rem 1rem 3rem;
+    }
+
+    /* STATUS BAR */
+    .status-bar {
+      background: #fff;
+      border: 1px solid #e0e0dc;
+      border-radius: 8px;
+      padding: 0.6rem 1rem;
+      font-size: 0.82rem;
+      color: #555;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .dot-green {
+      width: 8px; height: 8px;
+      background: #27ae60;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* SECTION LABEL */
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: #888;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    /* NEWS CARDS */
+    .news-list { display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2rem; }
+
+    .news-card {
+      background: #fff;
+      border: 1px solid #e0e0dc;
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+    }
+    .news-meta {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: #888;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+    .news-flag { margin-right: 4px; }
+    .news-title {
+      font-size: 0.97rem;
+      font-weight: 600;
+      color: #1a1a1a;
+      line-height: 1.4;
+      margin-bottom: 0.55rem;
+    }
+    .news-body {
+      font-size: 0.85rem;
+      color: #444;
+      line-height: 1.65;
+      margin-bottom: 0.6rem;
+    }
+    .news-source {
+      font-size: 0.78rem;
+      color: #777;
+    }
+    .news-source a {
+      color: #2980b9;
+      text-decoration: none;
+    }
+    .news-source a:hover { text-decoration: underline; }
+
+    /* TENDENCIAS */
+    .tendencias {
+      background: #1e3248;
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      color: #d0dde8;
+    }
+    .tendencias-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #90aac0;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .tendencias-icon {
+      font-size: 1rem;
+    }
+    .tendencias ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+    .tendencias li {
+      font-size: 0.86rem;
+      line-height: 1.6;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+    .tendencias li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: #5a8aaa;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      font-size: 0.75rem;
+      color: #aaa;
+      padding: 1.5rem 1rem;
+      border-top: 1px solid #ddd;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 600px) {
+      header { padding: 0.85rem 1rem; }
+      .header-date { font-size: 0.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-left">
+      <div>
+        <div style="display:flex; align-items:center; gap:0.5rem;">
+          <span style="font-size:1.2rem;">⚔️</span>
+          <span class="header-title">Ingenieros Militares</span>
+          <span class="badge-diario">Diario</span>
+        </div>
+        <div class="header-sub">Noticias de ingenieros de combate · Actualizado cada mañana a las 7am</div>
+      </div>
+    </div>
+    <div class="header-date">sábado, 13 de junio de 2026</div>
+  </header>
+
+  <main>
+
+    <div class="status-bar">
+      <span class="dot-green"></span>
+      Actualizado el 13 de junio de 2026, 07:00
+    </div>
+
+    <div class="section-label">Noticias del día</div>
+
+    <div class="news-list">
+
+      <div class="news-card">
+        <div class="news-meta"><span class="news-flag">🇺🇸</span> Estados Unidos — Fort Hood</div>
+        <div class="news-title">El 36.° Brigada de Ingenieros usa más de 12 nuevas tecnologías para reducir bajas en operaciones de brecha</div>
+        <div class="news-body">La 36.ª Brigada de Ingenieros de Fort Hood realizó en marzo de 2026 ejercicios de brechas usando más de una docena de tecnologías nuevas, con el objetivo de mejorar la tasa de supervivencia de los ingenieros de combate, que actualmente ronda el 50%. La brigada recreó líneas de obstáculos históricas de la Segunda Guerra Mundial, Tormenta del Desierto y el campo de batalla ucraniano-ruso. Esta iniciativa forma parte del programa de Transformación en Contacto del Ejército de EE.UU., que busca fieldar tecnología rápidamente.</div>
+        <div class="news-source">Fuente: <a href="#">Stars and Stripes</a></div>
+      </div>
+
+      <div class="news-card">
+        <div class="news-meta"><span class="news-flag">🇵🇱</span> Europa — Cracovia, Polonia</div>
+        <div class="news-title">Conferencia Combat Engineer &amp; Logistics 2026 reunió a líderes militares europeos</div>
+        <div class="news-body">En febrero de 2026 se celebró en Cracovia, Polonia, la conferencia Combat Engineer &amp; Logistics (CEL), considerada el principal foro europeo para la colaboración entre ingenieros militares y logística. El evento convocó a especialistas de múltiples países de la OTAN para intercambiar experiencias y tecnologías en ingeniería de combate, movilidad y sostenimiento en operaciones de gran escala.</div>
+        <div class="news-source">Fuente: <a href="#">Alford Technologies / CEL 2026</a></div>
+      </div>
+
+      <div class="news-card">
+        <div class="news-meta"><span class="news-flag">🇺🇾</span> Uruguay — Ejército Nacional</div>
+        <div class="news-title">Prueba del Arma de Ingenieros 2026: el Cabo Rebollo del BIC N°3 gana el Premio Zapador</div>
+        <div class="news-body">El Ejército de Uruguay celebró en junio de 2026 su tradicional Prueba del Arma de Ingenieros. El Cabo 1.° Héctor Rebollo, del Batallón de Ingenieros de Combate N.° 3, se alzó con el Premio Zapador. Las pruebas incluyeron trabajo con minicargador, tiro con arma larga, descenso desde torre de 12 metros, cross y demolición simulada de objetivos, evaluando las capacidades técnicas y físicas de los ingenieros de combate.</div>
+        <div class="news-source">Fuente: <a href="#">Ejército Nacional de Uruguay</a></div>
+      </div>
+
+      <div class="news-card">
+        <div class="news-meta"><span class="news-flag">🇪🇸</span> España — Mando de Ingenieros</div>
+        <div class="news-title">El PAP 2026 del Mando de Ingenieros refuerza la preparación física para el combate</div>
+        <div class="news-body">El Plan Anual de Preparación 2026 del Mando de Ingenieros del Ejército de Tierra español establece exigentes estándares de condición física para sus efectivos. El documento subraya que el militar ingeniero debe estar en condiciones de desarrollar su trabajo en las duras circunstancias del combate moderno, con énfasis en la resistencia, capacidad de carga y desempeño bajo estrés operacional.</div>
+        <div class="news-source">Fuente: <a href="#">Mando de Ingenieros — Ejército de Tierra (España)</a></div>
+      </div>
+
+      <div class="news-card">
+        <div class="news-meta"><span class="news-flag">🇺🇸</span> Estados Unidos — Reestructuración Army</div>
+        <div class="news-title">El Ejército de EE.UU. disuelve los Batallones de Ingenieros de Brigada y reorganiza su estructura</div>
+        <div class="news-body">Como parte del memorándum de estructura de fuerzas 2024-2029, el Ejército de EE.UU. está disolviendo los Batallones de Ingenieros de Brigada (BEB) y convirtiéndolos en batallones de ingenieros asignados directamente a divisiones. Solo las divisiones blindadas reforzadas conservarán una brigada de ingenieros subordinada. En febrero de 2026 se publicó un artículo proponiendo nuevas prácticas de sostenimiento para preservar la preparación de las unidades de ingenieros bajo esta nueva estructura, orientada al combate de gran escala.</div>
+        <div class="news-source">Fuente: <a href="#">Fort Leonard Wood — Engineer Magazine</a></div>
+      </div>
+
+      <div class="news-card">
+        <div class="news-meta"><span class="news-flag">🇺🇸</span> Estados Unidos — Desarrollo Profesional</div>
+        <div class="news-title">Suspensión de 12 meses en financiamiento de formación para ingenieros de combate del Ejército</div>
+        <div class="news-body">A partir del 19 de marzo de 2026, el Ejército de EE.UU. implementó una suspensión de 12 meses en la aprobación de fondos de Asistencia Educacional (TA) y Asistencia por Carrera (CA) para solicitudes de desarrollo profesional de ingenieros de combate. La medida afecta los programas de formación continua del MOS 12B y ha generado preocupación entre los suboficiales y oficiales del arma de ingenieros.</div>
+        <div class="news-source">Fuente: <a href="#">Operation Military Kids — MOS 12B Guide 2026</a></div>
+      </div>
+
+    </div>
+
+    <div class="section-label">Tendencias del día</div>
+
+    <div class="tendencias">
+      <div class="tendencias-title">
+        <span class="tendencias-icon">📊</span> Observaciones
+      </div>
+      <ul>
+        <li>Los ejércitos occidentales están acelerando la integración de tecnologías emergentes en las operaciones de brecha y movilidad, lecciones directamente derivadas del conflicto Ucrania-Rusia, donde los ingenieros de combate sufren altas tasas de bajas.</li>
+        <li>La reestructuración del Ejército de EE.UU. —que disuelve los BEB y crea batallones de ingenieros divisionales— refleja un giro doctrinal hacia operaciones de combate de gran escala (LSCO), alejándose del modelo de contrainsurgencia de los últimos 20 años.</li>
+        <li>América Latina mantiene sus propias tradiciones de evaluación y certificación del arma de ingenieros, con Uruguay como ejemplo reciente de competencias técnicas integradas que combinan demolición, tiro, obstáculos y movilidad.</li>
+      </ul>
+    </div>
+
+  </main>
+
+  <footer>
+    Ingenieros Militares Diario · Edición del 13 de junio de 2026
+  </footer>
+
+</body>
+</html>
